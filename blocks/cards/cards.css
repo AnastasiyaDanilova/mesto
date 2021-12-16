@@ -1,4 +1,19 @@
 .cards {
-    max-width: 880px;
     margin: 51px auto 66px;
+}
+
+
+
+@media screen and (max-width: 1000px) {
+    .cards {
+        max-width: 581px;
+    }
+}
+
+
+@media screen and (max-width: 350px) {
+    .cards__list {
+        max-width: 282px;
+        margin: 36px 19px 48px;
+    }
 }
