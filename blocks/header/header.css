@@ -2,7 +2,8 @@
     max-width: 880px;
     min-height: 74px;
     display: flex;
-    margin: 45px auto 0;
+    justify-content: flex-start;
+    align-items: start;
+    margin: 45px auto 40px;
     border-bottom: 1px solid rgba(84, 84, 84, .7);
-
 }
