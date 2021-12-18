@@ -12,8 +12,3 @@
     cursor: pointer;
 }
 
-@media screen and (max-width: 550px) {
-    .popup__input {
-        max-width: 238px;
-    }
-}

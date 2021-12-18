@@ -28,8 +28,9 @@
 @media screen and (max-width: 700px) {
     .profile__description {
 
-        margin: 14px 0 36px;
+        margin: 14px auto 36px;
         max-width: 460px;
+
     }
 }
 

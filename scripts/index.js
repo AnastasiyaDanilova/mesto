@@ -25,8 +25,8 @@ popupCloseButton.addEventListener('click',popupClose);
 
 const popupForm = document.querySelector('.popup__form');
 
-const nameInput = popupForm.querySelector('.popup__popup-name');
-const jobInput = popupForm.querySelector('.popup__popup-disription');
+const nameInput = popupForm.querySelector('.popup__input_name');
+const jobInput = popupForm.querySelector('.popup__input_job');
 
 const popupButton = popupForm.querySelector('.submit-button');
 

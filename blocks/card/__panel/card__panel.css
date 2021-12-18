@@ -1,5 +1,5 @@
 .card__panel {
     display: flex;
     justify-content: space-between;
-    margin: 0 20px 31px;
+    margin: 25px 15px 31px 21px;
 }

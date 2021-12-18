@@ -5,13 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./page/index.css">
-    <meta name="description" content="">
-    <meta name="keywords" content="">
+    <meta name="description" content="Сервис Место. Добавляй фотографии, делись с друзьями и оценивай.">
+    <meta name="keywords" content="Место, фото, фотографии">
+    <title>Mesto</title>
 </head>
 
 <body class="page">
 
-    <section class="content">
+    <div class="content">
 
         <header class="header">
             <img src="./images/Vector.svg" alt="Место" class="logo">
@@ -19,15 +20,17 @@
 
 
         <main>
+
             <section class="profile">
+
                 <div class="profile__about">
 
                     <img src="./images/image.jpg" alt="аватар" class="profile__photo">
 
                     <div class="profile__info">
                         <div class="profile__container">
-                            <p class="profile__name">Жак-Ив Кусто</p>
-                            <button class="profile__edit-button"></button>
+                            <h1 class="profile__name">Жак-Ив Кусто</h1>
+                            <button type="button" class="profile__edit-button"></button>
                         </div>
 
                         <p class="profile__description">Исследователь океана</p>
@@ -36,7 +39,7 @@
 
                 </div>
 
-                <button class="add-button"></button>
+                <button type="button" class="add-button"></button>
             </section>
 
             <section class="cards">
@@ -44,49 +47,49 @@
                     <li class="card">
                         <img src="./images/kirill-pershin-1088404-unsplash.jpg" alt="Карачаевск" class="card__image">
                         <div class="card__panel">
-                            <p class="card__city">Карачаевск</p>
-                            <button class="card__like"></button>
+                            <h2 class="card__city">Карачаевск</h2>
+                            <button type="button" class="card__like"></button>
                         </div>
                     </li>
 
                     <li class="card">
-                        <img src="./images/kirill-pershin-1404681-unsplash (1).png" alt="Гора Эльбрус"
+                        <img src="./images/kirill-pershin-1404681-unsplash.png" alt="Гора Эльбрус"
                             class="card__image">
                         <div class="card__panel">
-                            <p class="card__city">Гора Эльбрус</p>
-                            <button class="card__like"></button>
+                            <h2 class="card__city">Гора Эльбрус</h2>
+                            <button type="button" class="card__like"></button>
                         </div>
                     </li>
 
                     <li class="card">
-                        <img src="./images/kirill-pershin-1556355-unsplash (1).png" alt="Домбай" class="card__image">
+                        <img src="./images/kirill-pershin-1556355-unsplash.png" alt="Домбай" class="card__image">
                         <div class="card__panel">
-                            <p class="card__city">Домбай</p>
-                            <button class="card__like"></button>
+                            <h2 class="card__city">Домбай</h2>
+                            <button type="button" class="card__like"></button>
                         </div>
                     </li>
 
                     <li class="card">
-                        <img src="./images/kirill-pershin-1404681-unsplash (1).png" alt="Гора Эльбрус"
+                        <img src="./images/kirill-pershin-1404681-unsplash.png" alt="Гора Эльбрус"
                             class="card__image">
                         <div class="card__panel">
-                            <p class="card__city">Гора Эльбрус</p>
-                            <button class="card__like"></button>
+                            <h2 class="card__city">Гора Эльбрус</h2>
+                            <button type="button" class="card__like"></button>
                         </div>
                     </li>
 
                     <li class="card">
-                        <img src="./images/kirill-pershin-1556355-unsplash (1).png" alt="Домбай" class="card__image">
+                        <img src="./images/kirill-pershin-1556355-unsplash.png" alt="Домбай" class="card__image">
                         <div class="card__panel">
-                            <p class="card__city">Домбай</p>
-                            <button class="card__like"></button>
+                            <h2 class="card__city">Домбай</h2>
+                            <button type="button" class="card__like"></button>
                         </div>
                     </li>
                     <li class="card">
                         <img src="./images/kirill-pershin-1088404-unsplash.jpg" alt="Карачаевск" class="card__image">
                         <div class="card__panel">
-                            <p class="card__city">Карачаево-Черкесия</p>
-                            <button class="card__like"></button>
+                            <h2 class="card__city">Карачаево-Черкесия</h2>
+                            <button type="button" class="card__like"></button>
                         </div>
                     </li>
                 </ul>
@@ -96,18 +99,18 @@
         <footer class="footer">
             <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
         </footer>
-    </section>
+    </div>
 
     <div class="popup">
 
         <div class="popup__container ">
 
-            <button class="popup__close-button"></button>
+            <button type="button" class="popup__close-button"></button>
             <h2 class="popup__title">Редактировать профиль</h2>
 
-            <form class="popup__form">
-                <input type="text" value="Жак-Ив Кусто" class="popup__popup-name popup__input">
-                <input type="text" value="Исследователь океана" class="popup__popup-disription popup__input">
+            <form class="popup__form" name="popupForm">
+                <input type="text" name="popupInput" value="Жак-Ив Кусто" class="popup__input popup__input_name ">
+                <input type="text" name="popupInput" value="Исследователь океана" class="popup__input popup__input_job ">
                 <button type="submit" class="submit-button"></button>
             </form>
 
@@ -116,5 +119,5 @@
     </div>
 
     <script src="./scripts/index.js"></script>
-    
+
 </body>
