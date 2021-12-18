@@ -6,7 +6,18 @@
 }
 
 @media screen and (max-width: 700px) {
+
     .profile__photo {
+
         margin-right: 0;
+
+    }
+}
+
+@media screen and (max-width: 350px) {
+
+    .profile__photo {
+
+        margin-bottom: 23px;
     }
 }

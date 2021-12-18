@@ -3,6 +3,24 @@
     font-size: 18px;
     line-height: 22px;
     margin: 0;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 515px;
+}
+
+
+@media screen and (max-width: 1000px) {
+    .profile__description {
+       max-width: 340px;
+    }
+}
+
+@media screen and (max-width: 780px) {
+
+    .profile__description {
+       max-width: 300px;
+    }
 }
 
 
@@ -11,6 +29,13 @@
     .profile__description {
 
         margin: 14px 0 36px;
+        max-width: 460px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .profile__description {
+        max-width: 282px;
     }
 }
 
@@ -19,6 +44,5 @@
     .profile__description {
         font-size: 14px;
         line-height: 17px;
-        margin: 14px 0 36px;
     }
 }
