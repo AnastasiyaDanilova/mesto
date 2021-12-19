@@ -13,7 +13,7 @@ function popupOpen() {
 }
 
 function popupClose() {
-    popup.classList.remove('popup_open')
+    popup.classList.remove('popup_open');
 }
 
 popupOpenButton.addEventListener('click',popupOpen);
@@ -38,12 +38,13 @@ function saveNameJob (evt) {
 
     namePage.textContent = nameInput.value;
     jobPage.textContent = jobInput.value;
+    popupButton.addEventListener('click', popupClose);
+
 
 }
 
-popupButton.addEventListener('submit', saveNameJob); 
-popupButton.addEventListener('click', saveNameJob);
-popupButton.addEventListener('click', popupClose);
+popupForm.addEventListener('submit', saveNameJob); 
+popupForm.addEventListener('click', saveNameJob);
 
 
 
