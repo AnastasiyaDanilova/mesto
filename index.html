@@ -30,7 +30,7 @@
                     <div class="profile__info">
                         <div class="profile__container">
                             <h1 class="profile__name">Жак-Ив Кусто</h1>
-                            <button type="button" class="profile__edit-button"></button>
+                            <button type="button" aria-label="Редактировать" class=" button button_type_edit-info"></button>
                         </div>
 
                         <p class="profile__description">Исследователь океана</p>
@@ -39,7 +39,7 @@
 
                 </div>
 
-                <button type="button" class="add-button"></button>
+                <button type="button" aria-label="Добавить фото" class="button button_type_add-card"></button>
             </section>
 
             <section class="cards">
@@ -48,7 +48,7 @@
                         <img src="./images/kirill-pershin-1088404-unsplash.jpg" alt="Карачаевск" class="card__image">
                         <div class="card__panel">
                             <h2 class="card__city">Карачаевск</h2>
-                            <button type="button" class="card__like"></button>
+                            <button type="button" aria-label="Мне нравится" class="button button_type_like button_type_like-active"></button>
                         </div>
                     </li>
 
@@ -57,7 +57,7 @@
                             class="card__image">
                         <div class="card__panel">
                             <h2 class="card__city">Гора Эльбрус</h2>
-                            <button type="button" class="card__like"></button>
+                            <button type="button" aria-label="Мне нравится" class="button button_type_like"></button>
                         </div>
                     </li>
 
@@ -65,7 +65,7 @@
                         <img src="./images/kirill-pershin-1556355-unsplash.png" alt="Домбай" class="card__image">
                         <div class="card__panel">
                             <h2 class="card__city">Домбай</h2>
-                            <button type="button" class="card__like"></button>
+                            <button type="button" aria-label="Мне нравится" class="button button_type_like"></button>
                         </div>
                     </li>
 
@@ -74,7 +74,7 @@
                             class="card__image">
                         <div class="card__panel">
                             <h2 class="card__city">Гора Эльбрус</h2>
-                            <button type="button" class="card__like"></button>
+                            <button type="button" aria-label="Мне нравится" class="button button_type_like"></button>
                         </div>
                     </li>
 
@@ -82,14 +82,14 @@
                         <img src="./images/kirill-pershin-1556355-unsplash.png" alt="Домбай" class="card__image">
                         <div class="card__panel">
                             <h2 class="card__city">Домбай</h2>
-                            <button type="button" class="card__like"></button>
+                            <button type="button" aria-label="Мне нравится" class="button button_type_like"></button>
                         </div>
                     </li>
                     <li class="card">
                         <img src="./images/kirill-pershin-1088404-unsplash.jpg" alt="Карачаевск" class="card__image">
                         <div class="card__panel">
                             <h2 class="card__city">Карачаево-Черкесия</h2>
-                            <button type="button" class="card__like"></button>
+                            <button type="button" aria-label="Мне нравится" class="button button_type_like"></button>
                         </div>
                     </li>
                 </ul>
@@ -105,13 +105,13 @@
 
         <div class="popup__container ">
 
-            <button type="button" class="popup__close-button"></button>
+            <button type="button" aria-label="Закрыть" class="button button_type_close-popup"></button>
             <h2 class="popup__title">Редактировать профиль</h2>
 
             <form class="popup__form" name="popupForm">
-                <input type="text" name="popupInput" value="Жак-Ив Кусто" class="popup__input popup__input_name ">
-                <input type="text" name="popupInput" value="Исследователь океана" class="popup__input popup__input_job ">
-                <button type="submit" class="submit-button"></button>
+                <input type="text" name="popupInput" placeholder="Жак-Ив Кусто" class="popup__input popup__input_name ">
+                <input type="text" name="popupInput" placeholder="Исследователь океана" class="popup__input popup__input_job ">
+                <button type="submit" aria-label="Отправить" class="button button_type_submit"></button>
             </form>
 
         </div>

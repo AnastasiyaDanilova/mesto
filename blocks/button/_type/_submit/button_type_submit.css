@@ -1,0 +1,19 @@
+.button_type_submit {
+    background-image: url(../../../../images/Submit\ Button.svg);
+    border-radius: 2px;
+    max-width: 358px;
+    height: 50px;
+}
+
+.button_type_submit:hover {
+    cursor: pointer;
+    transition: .4s;
+    opacity: .8;
+}
+
+@media screen and (max-width: 550px) {
+    .button_type_submit {
+        background-image: url(../../../../images/SubmitButtonMobile.svg);
+        height: 46px;
+    }
+}

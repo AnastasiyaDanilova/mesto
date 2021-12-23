@@ -1,0 +1,20 @@
+.button_type_add-card {
+    background-image: url(../../../../images/Add\ Button.svg);
+    width: 150px;
+    height: 50px;
+    align-self: center;
+    border-radius: 2px;
+}
+
+.button_type_add-card:hover {
+    opacity: .6;
+    cursor: pointer;
+    transition: .4s;
+}
+
+@media screen and (max-width: 700px) {
+    .button_type_add-card {
+        width: 282px;
+        background-image: url(../../../../images/Add\ ButtonL.svg);
+    }
+}

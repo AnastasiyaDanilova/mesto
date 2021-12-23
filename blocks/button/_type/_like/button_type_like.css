@@ -1,0 +1,18 @@
+.button_type_like {
+    background-image: url(../../../../images/heart.svg);
+    align-self: center;
+    width: 22px;
+    height: 19px;
+}
+
+
+.button_type_like:hover {
+    cursor: pointer;
+    transition: .2s;
+    opacity: .5;
+}
+
+.button_type_like:active {
+    background-image: url(../../../../images/Union.svg);
+    opacity: 1;
+}

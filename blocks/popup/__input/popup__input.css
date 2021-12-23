@@ -3,4 +3,13 @@
     box-shadow: none;
     height: 27px;
     border-bottom: 1px solid rgba(0, 0, 0, .2);
+    font-size: 14px;
+    line-height: 17px;
+    padding-left: 0px;
+    padding-bottom: 4px;
+}
+
+.popup__input:focus {
+    background-color: rgba(191, 180, 180, .8);
+    border: 1px solid rgba(191, 180, 180);
 }
