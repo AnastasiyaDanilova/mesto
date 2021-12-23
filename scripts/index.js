@@ -1,22 +1,22 @@
-const popupOpenButton = document.querySelector('.profile__edit-button');
-const popupCloseButton = document.querySelector('.popup__close-button');
+const popupOpenButton = document.querySelector('.button_type_edit-info');
+const popupCloseButton = document.querySelector('.button_type_close-popup');
 const popup = document.querySelector('.popup');
 
-const namePage = document.querySelector('.profile__name');
-const jobPage = document.querySelector('.profile__description');
+const userName = document.querySelector('.profile__name');
+const userJob = document.querySelector('.profile__description');
 
 const popupForm = document.querySelector('.popup__form');
 
-const nameInput = popupForm.querySelector('.popup__input_name');
-const jobInput = popupForm.querySelector('.popup__input_job');
+const nameInput = popupForm.querySelector('.popup__input_type_name');
+const jobInput = popupForm.querySelector('.popup__input_type_job');
 
-const popupButton = popupForm.querySelector('.submit-button');
+const popupButton = popupForm.querySelector('.button_type_submit');
 
 function popupOpen() {
-    popup.classList.add('popup_open');
+    nameInput.value = userName.textContent;
+    jobInput.value = userJob.textContent;
 
-    nameInput.value = namePage.textContent;
-    jobInput.value = jobPage.textContent;
+    popup.classList.add('popup_open');
 }
 
 function popupClose() {
@@ -24,17 +24,16 @@ function popupClose() {
 }
 
 
-function saveNameJob (evt) {
-    
+function formSubmitHandler (evt) {
     evt.preventDefault();
 
-    namePage.textContent = nameInput.value;
-    jobPage.textContent = jobInput.value;
-    popupButton.addEventListener('click', popupClose);
+    userName.textContent = nameInput.value;
+    userJob.textContent = jobInput.value;
+    
+    popupClose();
 }
 
-popupForm.addEventListener('submit', saveNameJob); 
-popupForm.addEventListener('click', saveNameJob);
+popupForm.addEventListener('submit', formSubmitHandler); 
 popupOpenButton.addEventListener('click',popupOpen);
 popupCloseButton.addEventListener('click',popupClose);
 

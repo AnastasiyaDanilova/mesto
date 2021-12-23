@@ -10,6 +10,7 @@
 }
 
 .popup__input:focus {
-    background-color: rgba(191, 180, 180, .8);
-    border: 1px solid rgba(191, 180, 180);
+    background-color: rgba(191, 180, 180, 0.247);
+    outline: none;
+    border-radius: 3px;
 }

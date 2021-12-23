@@ -9,7 +9,6 @@
     max-width: 515px;
 }
 
-
 @media screen and (max-width: 1000px) {
     .profile__description {
        max-width: 340px;
@@ -17,20 +16,15 @@
 }
 
 @media screen and (max-width: 780px) {
-
     .profile__description {
        max-width: 300px;
     }
 }
 
-
-
 @media screen and (max-width: 700px) {
     .profile__description {
-
         margin: 6px auto 33px;
         max-width: 460px;
-
     }
 }
 
@@ -39,7 +33,6 @@
         max-width: 282px;
     }
 }
-
 
 @media screen and (max-width: 350px) {
     .profile__description {

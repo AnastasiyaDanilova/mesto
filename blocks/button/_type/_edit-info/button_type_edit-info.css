@@ -3,15 +3,13 @@
     margin-top: 37px;
     margin-left: 18px;
     width: 24px;
-    height: 24px;
-    
+    height: 24px; 
 }
 
 .button_type_edit-info:hover {
     transition: .4s;
     cursor: pointer;
     opacity: .6;
-    
 }
 
 @media screen and (max-width: 350px) {
@@ -20,6 +18,5 @@
         height: 18px;
         margin-top: 7px;
         margin-left: 10px;
-        
     }
 }
