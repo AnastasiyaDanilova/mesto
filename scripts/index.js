@@ -39,8 +39,6 @@ function saveNameJob (evt) {
     namePage.textContent = nameInput.value;
     jobPage.textContent = jobInput.value;
     popupButton.addEventListener('click', popupClose);
-
-
 }
 
 popupForm.addEventListener('submit', saveNameJob); 

@@ -3,10 +3,9 @@
     flex-direction: column;
     background-color: #fff;
     box-shadow: 0 0 25px rgba(0, 0, 0, .15);
-    border-radius: 10px;
-    align-items: center;
+    border-radius: 10px;  
     position: relative;
-    padding: 34px 36px 37px;
+    padding: 34px 33px 37px 36px;
 }
 
 @media screen and (max-width: 550px) {

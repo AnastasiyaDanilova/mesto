@@ -5,6 +5,7 @@
     max-width: 358px;
     height: 50px;
     background-position: center;
+    border-radius: 2px;
 }
 
 .submit-button:hover {

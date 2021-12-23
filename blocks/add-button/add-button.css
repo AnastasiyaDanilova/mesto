@@ -6,6 +6,7 @@
     background-color: transparent;
     border: none;
     align-self: center;
+    border-radius: 2px;
 }
 
 .add-button:hover {
