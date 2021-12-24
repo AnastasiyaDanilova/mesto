@@ -29,6 +29,12 @@
     }
 }
 
+@media screen and (max-width: 550px) {
+    .profile__name {
+        max-width: 270px;
+    }
+}
+
 @media screen and (max-width: 350px) {
     .profile__name {
         max-width: 240px;
