@@ -1,3 +1,44 @@
+const cardsList = document.querySelector('.cards__list');
+const cardTemplate = document.querySelector('#card-template').content;
+
+const Cards = [
+    {
+      name: 'Архыз',
+      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
+    },
+    {
+      name: 'Челябинская область',
+      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
+    },
+    {
+      name: 'Иваново',
+      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
+    },
+    {
+      name: 'Камчатка',
+      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
+    },
+    {
+      name: 'Холмогорский район',
+      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
+    },
+    {
+      name: 'Байкал',
+      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
+    }
+  ];
+
+  Cards.forEach(function (card) {
+    const cardElement = cardTemplate.cloneNode(true);
+  
+    cardElement.querySelector('.card__city').textContent = card.name;
+    cardElement.querySelector('.card__image').src = card.link;
+    
+    cardsList.append(cardElement);
+  });
+
+
+/*gh5^*/
 const popupOpenButton = document.querySelector('.button_type_edit-info');
 const popupCloseButton = document.querySelector('.button_type_close-popup');
 const popup = document.querySelector('.popup');
