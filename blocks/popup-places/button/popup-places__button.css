@@ -1,0 +1,10 @@
+.popup-places__button {
+    background-image:url(../../../images/Submit\ Button\ AddCard.svg);
+}
+
+@media screen and (max-width: 550px) {
+    .popup-places__button {
+        background-image: url(../../../images/Submit\ Button\ AddCard_S.svg);
+        height: 46px;
+    }
+}

@@ -57,9 +57,9 @@
         </footer>
     </div>
 
-    <div class="popup">
+    <div class="popup popup_type_profile">
 
-        <div class="popup__container ">
+        <div class="popup__container">
 
             <button type="button" aria-label="Закрыть" class="button button_type_close-popup"></button>
             <h2 class="popup__title">Редактировать профиль</h2>
@@ -76,14 +76,35 @@
 
     </div>
 
-    <template id="card-template">
-        <div class="card">
-            <img src="" alt="" class="card__image">
-            <div class="card__panel">
-                <h2 class="card__city"></h2>
-                <button type="button" aria-label="Мне нравится" class="button card__like-button"></button>
-            </div>
+    <div class="popup popup_type_place">
+
+        <div class="popup__container">
+
+            <button type="button" aria-label="Закрыть" class="button button_type_close-popup"></button>
+            <h2 class="popup__title">Новое место</h2>
+
+            <form class="popup__form" name="popupForm">
+                <input type="text" name="popupInput" placeholder="Название"
+                    class="popup__input popup__input_type_name">
+                <input type="text" name="popupInput" placeholder="Ссылка на картинку"
+                    class="popup__input popup__input_type_job">
+                <button type="submit" aria-label="Отправить" class="button button_type_submit popup-places__button"></button>
+            </form>
+
         </div>
+
+    </div>
+
+    <template class="card-template">
+        <li>
+            <div class="card">
+                <img src="" alt="" class="card__image">
+                <div class="card__panel">
+                    <h2 class="card__city"></h2>
+                    <button type="button" aria-label="Мне нравится" class="button card__like-button"></button>
+                </div>
+            </div>
+        </li>
     </template>
 
     <script src="./scripts/index.js"></script>
