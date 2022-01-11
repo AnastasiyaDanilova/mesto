@@ -44,7 +44,7 @@
             </section>
 
             <section class="cards">
-                
+
                 <ul class="cards__list">
 
                 </ul>
@@ -84,21 +84,31 @@
             <h2 class="popup__title">Новое место</h2>
 
             <form class="popup__form" name="popupForm">
-                <input type="text" name="popupInput" placeholder="Название"
-                    class="popup__input popup__input_type_name">
+                <input type="text" name="popupInput" placeholder="Название" class="popup__input popup__input_type_name">
                 <input type="text" name="popupInput" placeholder="Ссылка на картинку"
                     class="popup__input popup__input_type_job">
-                <button type="submit" aria-label="Отправить" class="button button_type_submit popup-places__button"></button>
+                <button type="submit" aria-label="Отправить"
+                    class="button button_type_submit popup-places__button"></button>
             </form>
 
         </div>
 
     </div>
 
+    <div class="popup popup_type_image">
+        <figure class="popup__figure">
+            <button type="button" aria-label="Закрыть" class="button button_type_close-popup"></button>
+            <img src="" alt="" class="popup__image">
+            <figcaption class="popup__fig-caption"></figcaption>
+        </figure>
+
+    </div>
+
     <template class="card-template">
-        <li>
-            <div class="card">
+        <li class="card">
+            <div>
                 <img src="" alt="" class="card__image">
+                <button class="button card__delete-button"></button>
                 <div class="card__panel">
                     <h2 class="card__city"></h2>
                     <button type="button" aria-label="Мне нравится" class="button card__like-button"></button>

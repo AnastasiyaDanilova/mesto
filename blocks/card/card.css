@@ -5,4 +5,5 @@
     justify-content: space-between;
     flex-direction: column;
     max-width: 282px;
+    position: relative;
 }
