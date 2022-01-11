@@ -129,7 +129,11 @@ popupFormPlace.addEventListener('submit', (evt) => {
 })
 
 popupFormProfile.addEventListener('submit', submitProfileForm);
-openButtonPopupPprofile.addEventListener('click', () => togglePopup(popupProfile));
+openButtonPopupPprofile.addEventListener('click', () => {
+  togglePopup(popupProfile)
+  nameInputProfile.value = userNameProfile.textContent;
+  jobInputProfile.value= userJobProfile.textContent;
+});
 closeButtonPopupPprofile.addEventListener('click', () => togglePopup(popupProfile));
 openButtonPopupPlace.addEventListener('click', () => togglePopup(popupPlace));
 closeButtonPopupPlace.addEventListener('click', () => togglePopup(popupPlace));
