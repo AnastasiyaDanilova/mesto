@@ -80,7 +80,8 @@ function createCard(card) {
 
   cardCityName.textContent = card.name;
   cardImage.src = card.link;
-
+  
+  cardImage.alt = card.name;
 
   likeCardButton.addEventListener('click', (evt) => {
     const targetElement = evt.target;
@@ -99,6 +100,8 @@ function createCard(card) {
     
     popupImageCapture.textContent = cardCityName.textContent;
     popupImageImg.src = cardImage.src;
+    
+    popupImageImg.alt = card.name;
   });
 
   return cardElement;
