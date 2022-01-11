@@ -17,6 +17,8 @@ const closeButtonPopupImage = popupImage.querySelector('.button_type_close-popup
 // html поля
 const userNameProfile = document.querySelector('.profile__name');
 const userJobProfile = document.querySelector('.profile__description');
+const popupImageImg = popupImage.querySelector('.popup__image');
+const popupImageCapture = popupImage.querySelector('.popup__fig-caption');
 
 // inputs
 const nameInputProfile = popupFormProfile.querySelector('.popup__input_type_name');
@@ -75,8 +77,7 @@ function createCard(card) {
   const cardImage = cardElement.querySelector('.card__image');
   const likeCardButton = cardElement.querySelector('.card__like-button');
   const deleteCardButton = cardElement.querySelector('.card__delete-button');
-  const popupImageImg = popupImage.querySelector('.popup__image');
-  const popupImageCapture = popupImage.querySelector('.popup__fig-caption');
+
 
   cardCityName.textContent = card.name;
   cardImage.src = card.link;
@@ -100,7 +101,7 @@ function createCard(card) {
     
     popupImageCapture.textContent = cardCityName.textContent;
     popupImageImg.src = cardImage.src;
-    
+
     popupImageImg.alt = card.name;
   });
 
