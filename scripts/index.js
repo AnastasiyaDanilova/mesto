@@ -1,3 +1,4 @@
+
 // модалки 
 const popupProfile = document.querySelector('.popup_type_profile');
 const popupPlace = document.querySelector('.popup_type_place');
@@ -138,3 +139,5 @@ closeButtonPopupPprofile.addEventListener('click', () => togglePopup(popupProfil
 openButtonPopupPlace.addEventListener('click', () => togglePopup(popupPlace));
 closeButtonPopupPlace.addEventListener('click', () => togglePopup(popupPlace));
 closeButtonPopupImage.addEventListener('click', () => togglePopup(popupImage));
+
+

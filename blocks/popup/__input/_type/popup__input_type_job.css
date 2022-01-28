@@ -1,9 +1,9 @@
 .popup__input_type_job {
-    margin: 27px 0px 51px 0px;
+    margin-top: 13px;
 }
 
 @media screen and (max-width: 550px) {
     .popup__input_type_job {
-        margin: 26px 0 48px;
+        margin-top: 9px;
     }
 }
