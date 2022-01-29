@@ -1,7 +1,4 @@
 .button_type_submit-inactive {
     background-image: url(../../../images/SubmitButtonInactive.svg);
-};
-
-.button_type_submit-inactive:hover {
     cursor: default;
 };
