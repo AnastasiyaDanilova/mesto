@@ -1,9 +1,5 @@
 
-// отмена отправки формы
 
-const preventDefault = (evt) => {
-    evt.preventDefault();
-};
 
 // проверка кнопки
 
@@ -13,10 +9,14 @@ const toggleButtonError = (form, { submitButtonSelector, inactiveButtonClass }) 
     if (!validOrNotForm) {
         buttonSubmit.classList.add(inactiveButtonClass);
         buttonSubmit.setAttribute('disabled', '');
+        console.log('net');
     } else {
         buttonSubmit.classList.remove(inactiveButtonClass);
         buttonSubmit.removeAttribute('disabled');
+        console.log('DA');
     };
+
+    console.log('147')
 };
 
 
@@ -40,6 +40,7 @@ const isValid = (form, input, classes) => {
 
     if (!input.validity.valid) {
         showError(input, errorElement, classes);
+        
     } else {
         hideError(input, errorElement, classes);
     };
@@ -55,22 +56,35 @@ const inputsEventListeners = (form, { inputSelector, ...rest }) => {
     inputList.forEach((input) => {
         input.addEventListener('input', () => {
             isValid(form, input, rest);
+            toggleButtonError(form, rest);
         });
     });
 };
 
 // запуск валидации для форм 
-const enableValidation = ({ formSelector, ...rest }) => {
+const enableValidation = ({ formSelector, buttonOpenProfileSelector, buttonOpenPlaceSelector, ...rest }) => {
 
+    const form = document.querySelector(formSelector);
     const formList = document.querySelectorAll(formSelector);
 
     formList.forEach((form) => {
-        form.addEventListener('submit', preventDefault);
-        console.log('for each form');
-
         inputsEventListeners(form, rest);
         toggleButtonError(form, rest);
+
+        const buttonOpenProfile = document.querySelector(buttonOpenProfileSelector);
+        const buttonOpenPlace = document.querySelector(buttonOpenPlaceSelector);
+
+        buttonOpenProfile.addEventListener('click', () => {
+            toggleButtonError(form, rest);
+            console.log('profile');
+        });
+        buttonOpenPlace.addEventListener('click', () => {
+            toggleButtonError(form, rest);
+            console.log('place');
+        });
     });
+
+    toggleButtonError(form, rest);
 };
 
 
@@ -81,34 +95,6 @@ enableValidation({
     errorClass: 'popup__error_visible',
     submitButtonSelector: '.button_type_submit',
     inactiveButtonClass: 'button_type_submit-inactive',
+    buttonOpenProfileSelector: '.button_type_edit-info',
+    buttonOpenPlaceSelector: '.button_type_add-card'
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// enableValidation ({
-//     formSelector: '.popup__form',
-//     inputSelector: '.popup__input',
-//     submitButtonSelector: '.button_type_submit',
-//     inactiveButtonClass: 'button_type_submit-inactive',
-//     inputErrorClass: 'popup__input_type_error',
-//     errorClass: 'popup__error_visible'
-//   }); 
-
