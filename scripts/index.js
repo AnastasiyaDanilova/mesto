@@ -74,7 +74,6 @@ function openPopup (popup) {
 function closePopup (popup) {
   popup.classList.remove('popup_open');
   document.removeEventListener('keydown', closePopupEscape);
-  errorHide (popup);
 };
 
 function closePopupOverlayClick (popup) {
@@ -193,17 +192,16 @@ function inputsPushProfile (nameInputProfile, jobInputProfile, userNameProfile, 
   jobInputProfile.value= userJobProfile.textContent;
 };
 
-inputsPushProfile(nameInputProfile, jobInputProfile, userNameProfile, userJobProfile);
-
 openButtonPopupPprofile.addEventListener('click', () => {
   openPopup(popupProfile);
   inputsPushProfile(nameInputProfile, jobInputProfile, userNameProfile, userJobProfile)
-
+  errorHide (popupProfile);
 });
 
 openButtonPopupPlace.addEventListener('click', () => {
   openPopup(popupPlace);
   formReset (popupFormPlace);
+  errorHide (popupPlace);
 });
 
 popupFormProfile.addEventListener('submit', submitProfileForm);
