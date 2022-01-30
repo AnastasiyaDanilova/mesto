@@ -1,6 +1,4 @@
 
-
-
 // проверка кнопки
 
 const toggleButtonError = (form, { submitButtonSelector, inactiveButtonClass }) => {
@@ -9,16 +7,11 @@ const toggleButtonError = (form, { submitButtonSelector, inactiveButtonClass }) 
     if (!validOrNotForm) {
         buttonSubmit.classList.add(inactiveButtonClass);
         buttonSubmit.setAttribute('disabled', '');
-        console.log('net');
     } else {
         buttonSubmit.classList.remove(inactiveButtonClass);
         buttonSubmit.removeAttribute('disabled');
-        console.log('DA');
     };
-
-    console.log('147')
 };
-
 
 // показать/скрыть ошибку
 const showError = (input, errorElement, { inputErrorClass, errorClass }) => {
@@ -76,11 +69,9 @@ const enableValidation = ({ formSelector, buttonOpenProfileSelector, buttonOpenP
 
         buttonOpenProfile.addEventListener('click', () => {
             toggleButtonError(form, rest);
-            console.log('profile');
         });
         buttonOpenPlace.addEventListener('click', () => {
             toggleButtonError(form, rest);
-            console.log('place');
         });
     });
 

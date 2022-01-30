@@ -5,7 +5,6 @@ const popupPlace = document.querySelector('.popup_type_place');
 const popupImage = document.querySelector('.popup_type_image');
 const allPopups = document.querySelectorAll('.popup');
 
-
 // формы 
 const popupFormProfile = popupProfile.querySelector('.popup__form');
 const popupFormPlace = popupPlace.querySelector('.popup__form');
@@ -23,7 +22,6 @@ const userNameProfile = document.querySelector('.profile__name');
 const userJobProfile = document.querySelector('.profile__description');
 const popupImageImg = popupImage.querySelector('.popup__image');
 const popupImageCapture = popupImage.querySelector('.popup__fig-caption');
-
 
 // inputs
 const nameInputProfile = popupFormProfile.querySelector('.popup__input_type_name');
@@ -62,7 +60,6 @@ const cards = [
     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
   }
 ];
-
 
 // открытие попапа
 
