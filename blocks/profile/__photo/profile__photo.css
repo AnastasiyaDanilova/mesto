@@ -11,7 +11,7 @@
     }
 }
 
-@media screen and (max-width: 350px) {
+@media screen and (max-width: 550px) {
     .profile__photo {
         margin-bottom: 27px;
     }

@@ -31,15 +31,16 @@
 
 @media screen and (max-width: 550px) {
     .profile__name {
-        max-width: 270px;
+        max-width: 280px;
+        font-size: 27px;
+        line-height: 33px;
+        margin: 0;
     }
 }
 
 @media screen and (max-width: 350px) {
     .profile__name {
-        max-width: 240px;
-        font-size: 27px;
-        line-height: 33px;
-        margin: 0;
+        max-width: 250px;
+        font-size: 24px;
     }
 }
