@@ -3,11 +3,10 @@
     align-self: center;
     width: 22px;
     height: 19px;
+    cursor: pointer;
 }
 
 
 .card__like-button:hover {
-    cursor: pointer;
-    transition: .2s;
     opacity: .5;
 }
