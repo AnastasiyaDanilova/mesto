@@ -134,10 +134,9 @@ function createCard(card) {
   cardImage.alt = card.name;
 
   likeCardButton.addEventListener('click', () => {
-    // const targetElement = evt.target;
+    const targetElement = evt.target;
 
-    // targetElement.classList.toggle('card__like-button_active');
-    likeCardButton.classList.toggle('card__like-button_active');
+    targetElement.classList.toggle('card__like-button_active');
   });
 
   deleteCardButton.addEventListener('click', (evt) => {
