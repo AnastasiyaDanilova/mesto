@@ -9,6 +9,8 @@ export class FormValidator {
         this._inactiveButtonClass = settings.inactiveButtonClass;
         this._submitButtonSelector = settings.submitButtonSelector;
         this._buttonSubmit = this._form.querySelector(this._submitButtonSelector);
+        this._inputList = this._form.querySelectorAll(this._inputSelector);
+        this._errorList = this._form.querySelectorAll(this._popupErrorSelector);
     };
 
     // скрыть/показать кнопку отправки формы
@@ -52,14 +54,11 @@ export class FormValidator {
 
     // скрыть ошибку при открытии окна после закрытия
     _errorHideWhenOpen() {
-        const inputList = this._form.querySelectorAll(this._inputSelector);
-        const errorList = this._form.querySelectorAll(this._popupErrorSelector);
-
-        inputList.forEach((input) => {
+        this._inputList.forEach((input) => {
             this._inputHideError(input);
         });
 
-        errorList.forEach((errorElement) => {
+        this._errorList.forEach((errorElement) => {
             this._errorHideError(errorElement);
         });
     };

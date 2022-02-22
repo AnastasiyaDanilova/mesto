@@ -14,6 +14,7 @@ export class Card {
   _fillCard() {
     this._cardCityName.textContent = this._name;
     this._cardImage.src = this._link;
+    this._cardImage.alt = this._name;
   };
 
   // лайк 
@@ -24,6 +25,7 @@ export class Card {
   // удаление
   _deleteCard() {
     this._cardElement.remove();
+    this._cardElement = null;
   };
 
   // открытие попапа
@@ -46,7 +48,7 @@ export class Card {
     this._cardImage.addEventListener('click', () => this._imagePopupOpen());
   };
 
-  // создание карточки
+  // создание карточки 
   generateCard() {
     this._cardElement = this._cardTemplate.cloneNode('true');
 

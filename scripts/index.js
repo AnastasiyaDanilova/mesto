@@ -1,6 +1,6 @@
 import { FormValidator } from "./FormValidator.js"
 import { Card } from "./card.js";
-import { openPopup, closePopup } from "./utils.js";
+import { openPopup, closePopup} from "./utils.js";
 import { popupImage, config, cards } from "./const.js";
 
 // модалки 
@@ -63,6 +63,18 @@ function inputsPushProfile(nameInputProfile, jobInputProfile, userNameProfile, u
   nameInputProfile.value = userNameProfile.textContent;
   jobInputProfile.value = userJobProfile.textContent;
 };
+
+// закрытие попапа оверлей
+function closePopupOverlayClick (popup) {
+  popup.addEventListener('mousedown', (evt) => {
+    if (evt.target === evt.currentTarget) {
+      closePopup(popup);
+    };
+  });
+};
+
+closePopupOverlayClick(popupFormProfile);
+closePopupOverlayClick(popupFormPlace);
 
 // обработчики 
 popupFormProfile.addEventListener('submit', submitProfileForm);
