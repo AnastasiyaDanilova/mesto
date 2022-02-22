@@ -30,8 +30,8 @@
                     <div class="profile__info">
                         <div class="profile__container">
                             <h1 class="profile__name">Жак-Ив Кусто</h1>
-                            <button type="button" aria-label="Редактировать"
-                                class=" button button_type_edit-info"></button>
+                            <button type="button" aria-label="Редактировать профиль"
+                                class=" button button_type_edit-info profile-button"></button>
                         </div>
 
                         <p class="profile__description">Исследователь океана</p>
@@ -40,7 +40,8 @@
 
                 </div>
 
-                <button type="button" aria-label="Добавить фото" class="button button_type_add-card"></button>
+                <button type="button" aria-label="Добавить фото"
+                    class="button place-button button_type_add-card"></button>
             </section>
 
             <section class="cards">
@@ -64,14 +65,14 @@
             <button type="button" aria-label="Закрыть" class="button button_type_close-popup"></button>
             <h2 class="popup__title">Редактировать профиль</h2>
 
-            <form class="popup__form" name="popupForm" novalidate>
+            <form class="popup__form" id="profile" name="popupForm" novalidate>
 
                 <input id="name-input" required type="text" name="popupInput" placeholder="Ваше имя"
                     class="popup__input popup__input_type_name" minlength="2" maxlength="40">
                 <span class="name-input-error popup__error"></span>
 
                 <input id="job-input" required type="text" name="popupInput" placeholder="Ваша профессия"
-                class="popup__input popup__input_type_job"minlength="2" maxlength="200">
+                    class="popup__input popup__input_type_job" minlength="2" maxlength="200">
                 <span class="job-input-error popup__error"></span>
 
                 <button type="submit" aria-label="Отправить" class="button button_type_submit"></button>
@@ -88,16 +89,16 @@
             <button type="button" aria-label="Закрыть" class="button button_type_close-popup"></button>
             <h2 class="popup__title">Новое место</h2>
 
-            <form class="popup__form" name="popupForm" novalidate>
+            <form class="popup__form" id="place" name="popupForm" novalidate>
 
-                    <input id="place-input" required type="text" name="popupInput" placeholder="Название" 
+                <input id="place-input" required type="text" name="popupInput" placeholder="Название"
                     class="popup__input popup__input_type_name" minlength="2" maxlength="30">
-                    <span  class="place-input-error popup__error"></span>
+                <span class="place-input-error popup__error"></span>
 
-                    <input id="url-input" required type="url" name="popupInput" placeholder="Ссылка на картинку"
+                <input id="url-input" required type="url" name="popupInput" placeholder="Ссылка на картинку"
                     class="popup__input popup__input_type_job">
-                    <span class="url-input-error popup__error"></span>
-                
+                <span class="url-input-error popup__error"></span>
+
 
                 <button type="submit" aria-label="Отправить"
                     class="button button_type_submit button_type_submit-place"></button>
@@ -118,18 +119,16 @@
 
     <template class="card-template">
         <li class="card">
-                <img class="card__image">
-                <button class="button card__delete-button"></button>
-                <div class="card__panel">
-                    <h2 class="card__city"></h2>
-                    <button type="button" aria-label="Мне нравится" class="button card__like-button"></button>
-                </div>
+            <img class="card__image">
+            <button class="button card__delete-button"></button>
+            <div class="card__panel">
+                <h2 class="card__city"></h2>
+                <button type="button" aria-label="Мне нравится" class="button card__like-button"></button>
+            </div>
         </li>
     </template>
 
     <script type="module" src="./scripts/index.js"></script>
-    <script type="module" src="./scripts/validate.js"></script>
-    
 
 </body>
 
