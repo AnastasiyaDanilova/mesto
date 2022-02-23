@@ -1,3 +1,5 @@
+import { escNumber } from "./const.js";
+
 // открытие попапа
 export function openPopup (popup) {
     popup.classList.add('popup_open');
@@ -11,7 +13,7 @@ export function closePopup (popup) {
   };
   
 export function closePopupEscape (evt) {
-    if (evt.keyCode === 27 ) {
+    if (evt.keyCode === escNumber) {
       const openedPopup = document.querySelector('.popup_open');
       closePopup(openedPopup);
     };

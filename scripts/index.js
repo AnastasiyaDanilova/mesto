@@ -1,7 +1,7 @@
 import { FormValidator } from "./FormValidator.js"
 import { Card } from "./card.js";
 import { openPopup, closePopup} from "./utils.js";
-import { popupImage, config, cards } from "./const.js";
+import { popupImage, config, cards} from "./const.js";
 
 // модалки 
 const popupProfile = document.querySelector('.popup_type_profile');
@@ -75,6 +75,7 @@ function closePopupOverlayClick (popup) {
 
 closePopupOverlayClick(popupFormProfile);
 closePopupOverlayClick(popupFormPlace);
+closePopupOverlayClick(popupImage);
 
 // обработчики 
 popupFormProfile.addEventListener('submit', submitProfileForm);
