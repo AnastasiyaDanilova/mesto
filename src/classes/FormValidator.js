@@ -1,3 +1,4 @@
+
 export class FormValidator {
     constructor(settings, form) {
         this._form = form;
@@ -112,15 +113,9 @@ export class FormValidator {
     enableValidation() {
         this._inputsEventListeners();
         this._popupButtonsWhenOpen();
+        
+        this._form.addEventListener('submit', (evt) => {
+            evt.preventDefault()
+        })
     };
-};
-
-export const config = {
-    formSelector: '.popup__form',
-    inputSelector: '.popup__input',
-    inputErrorClass: 'popup__input_type_error',
-    errorClass: 'popup__error_visible',
-    submitButtonSelector: '.button_type_submit',
-    inactiveButtonClass: 'button_type_submit-inactive',
-    popupErrorSelector: '.popup__error'
 };

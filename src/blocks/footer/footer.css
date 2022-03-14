@@ -1,7 +1,7 @@
 .footer {
     margin: 0 auto 60px;
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
 }
 
 @media screen and (max-width: 700px) {

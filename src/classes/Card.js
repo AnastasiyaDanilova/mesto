@@ -1,13 +1,11 @@
-import { openPopup } from "./utils.js";
-import { popupImageCapture, popupImageImg, popupImage } from "./const.js";
 
 export class Card {
-  constructor(data, templateElementSelector) {
+  constructor(data, templateElementSelector, handleCardClick) {
     this._name = data.name;
     this._link = data.link;
     this._templateElementSelector = templateElementSelector;
     this._cardTemplate = document.querySelector(this._templateElementSelector).content.querySelector('.card');
-
+    this._handleCardClick = handleCardClick;
   };
 
   // заполнение  
@@ -28,24 +26,13 @@ export class Card {
     this._cardElement = null;
   };
 
-  // открытие попапа
-  _imagePopupOpen() {
-
-    openPopup(popupImage);
-
-    popupImageCapture.textContent = this._cardCityName.textContent;
-    popupImageImg.src = this._cardImage.src;
-
-    popupImageImg.alt = this._name;
-  };
-
   // обработчики 
   _setEventListeners() {
     this._likeCardButton.addEventListener('click', () => this._likeCard());
 
     this._deleteCardButton.addEventListener('click', () => this._deleteCard());
 
-    this._cardImage.addEventListener('click', () => this._imagePopupOpen());
+    this._cardImage.addEventListener('click', () => this._handleCardClick());
   };
 
   // создание карточки 
