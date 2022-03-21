@@ -7,7 +7,7 @@ import { FormValidator } from "../components/FormValidator.js"
 import { Card } from "../components/Card.js";
 import { config, cards, formValidators, openButtonPopupPprofile, openButtonPopupPlace, nameInputProfile, jobInputProfile, cardTemplateSelector } from "../utils/const.js";
 
-// отправка формы 
+// отправка формы
 function submitProfileForm(data) {
   const { name, job } = data;
   profileValue.setUserInfo(name, job);
