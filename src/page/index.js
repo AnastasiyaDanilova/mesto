@@ -24,7 +24,7 @@ function submitPlaceForm(data) {
   popupTypePlace.close();
 };
 
-// содание карточки 
+// содание карточки
 function createCard (data) {
   const newCard = new Card(data, cardTemplateSelector, () => {
     popupTypeImage.open(data.link, data.name)
