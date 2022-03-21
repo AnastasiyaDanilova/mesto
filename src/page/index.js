@@ -6,6 +6,24 @@ import { Section } from '../components/Section.js';
 import { FormValidator } from "../components/FormValidator.js"
 import { Card } from "../components/Card.js";
 import { config, cards, formValidators, openButtonPopupPprofile, openButtonPopupPlace, nameInputProfile, jobInputProfile, cardTemplateSelector } from "../utils/const.js";
+import {api} from '../components/Api.js';
+import { data } from 'autoprefixer';
+
+api.getProfile().then(res => {
+profileValue.setUserInfo(res.name, res.about)
+// console.log('res', res.name, 'abobo', res.about)
+})
+
+api.getInitialCards().then(cardList => {
+  cardList.forEach(data => {
+    const card = createCard({
+      name: data.name,
+      link: data.link
+    })
+    // console.log(card)
+    section.addItem(card)
+  })
+  })
 
 // отправка формы
 function submitProfileForm(data) {
