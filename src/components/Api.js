@@ -19,6 +19,41 @@ class Api {
             res.ok ? res.json() : Promise.reject(res.status)
         ).catch(console.log);
     }
+
+    editProfile (name, about) {
+        return fetch(`${this._baseUrl}/users/me`, {
+            method: "PATCH",
+            headers: this._headers,
+            body: JSON.stringify({
+                name,
+                about
+            })
+         }).then(res => 
+             res.ok ? res.json() : Promise.reject(res.status)
+         ).catch(console.log);
+    }
+
+    addCard (name, link) {
+    return fetch(`${this._baseUrl}/cards`, {
+        method: "POST",
+        headers: this._headers,
+        body: JSON.stringify({
+            name,
+            link
+        })
+        }).then(res => 
+            res.ok ? res.json() : Promise.reject(res.status)
+        ).catch(console.log);
+    }
+
+    deleteCard (id) {
+    return fetch(`${this._baseUrl}/cards/${id}`, {
+        method: "DELETE",
+        headers: this._headers
+        }).then(res => 
+            res.ok ? res.json() : Promise.reject(res.status)
+        ).catch(console.log);
+    }
   
     // другие методы работы с API
   }
@@ -26,7 +61,7 @@ class Api {
 export const api = new Api({
 baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-37',
 headers: {
-    authorization: '55fe8030-1e94-4e27-b38e-835c06ad700c', // мой токен
+    authorization: ' c6860009-08a1-4ac0-9a26-70cf082caccd',
     'Content-Type': 'application/json'
 }
 }); 

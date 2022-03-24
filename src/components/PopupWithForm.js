@@ -17,6 +17,9 @@ export class PopupWithForm extends Popup {
         return this._values;
     };
 
+    getNewCallback(newsubmitFormCallback) {
+        this._submitFormCallback = newsubmitFormCallback;
+    }
     setEventListeners() {
         super.setEventListeners();
         this._popupForm.addEventListener('submit', () => {

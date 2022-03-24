@@ -116,6 +116,22 @@
 
     </div>
 
+    <div class="popup popup_type_delete" id="profile-delete">
+
+        <div class="popup__container">
+
+            <button type="button" aria-label="Закрыть" class="button button_type_close-popup"></button>
+            <h2 class="popup__title">Вы уверены?</h2>
+
+            <form class="popup__form" id="place" name="popup-delete-form" novalidate>
+                <button type="submit" aria-label="Отправить"
+                    class="button button_type_submit button_type_submit-delete"></button>
+            </form>
+
+        </div>
+
+
+    </div>
     <template class="card-template">
         <li class="card">
             <img class="card__image">
@@ -123,6 +139,8 @@
             <div class="card__panel">
                 <h2 class="card__city"></h2>
                 <button type="button" aria-label="Мне нравится" class="button card__like-button"></button>
+                <span class="card__like-count"></span>
+                
             </div>
         </li>
     </template>

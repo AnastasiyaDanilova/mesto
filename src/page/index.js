@@ -9,49 +9,86 @@ import { config, cards, formValidators, openButtonPopupPprofile, openButtonPopup
 import {api} from '../components/Api.js';
 import { data } from 'autoprefixer';
 
-api.getProfile().then(res => {
-profileValue.setUserInfo(res.name, res.about)
-// console.log('res', res.name, 'abobo', res.about)
-})
+let userId;
 
-api.getInitialCards().then(cardList => {
-  cardList.forEach(data => {
-    const card = createCard({
-      name: data.name,
-      link: data.link
+Promise.all([api.getInitialCards(), api.getProfile()])
+  .then(([cardList, userData]) => { 
+    profileValue.setUserInfo(userData.name, userData.about);
+    cardList.reverse();
+    userId = userData._id
+
+
+    cardList.forEach(data => {
+      const card = createConstCard(data);
+      section.addItem(card)
     })
-    // console.log(card)
-    section.addItem(card)
-  })
+
+
   })
 
 // отправка формы
 function submitProfileForm(data) {
   const { name, job } = data;
-  profileValue.setUserInfo(name, job);
-  popupTypeProfile.close();
+
+  api.editProfile(name, job)
+  .then(() => {
+    profileValue.setUserInfo(name, job)
+    popupTypeProfile.close()
+  })
 };
 
 function submitPlaceForm(data) {
-  const card = createCard({
-    name: data['place-name'],
-    link: data.link
-  }); 
-
-  section.addItem(card);
-  popupTypePlace.close();
+  api.addCard(data['place-name'], data.link)
+  .then((res) => {
+    const card = createConstCard(res);
+    section.addItem(card);
+    popupTypePlace.close();
+  })
+  
 };
+
+// вызов createCard
+
+function createConstCard (data) {
+  const card = createCard({
+    name: data.name,
+    link: data.link,
+    likes: data.likes,
+    id: data._id,
+    userId: userId,
+    ownerId: data.owner._id
+  })
+  // console.log(data.owner._id, userId)
+  return card
+} 
+
 
 // содание карточки
 function createCard (data) {
-  const newCard = new Card(data, cardTemplateSelector, () => {
-    popupTypeImage.open(data.link, data.name)
-  });
+  const newCard = new Card(
+    data,
+    cardTemplateSelector,
+    () => {
+      popupTypeImage.open(data.link, data.name)
+    },
+    (id) => {
+      console.log(id)
+      popupTypeDelete.open()
+      popupTypeDelete.getNewCallback(() => {
+        api.deleteCard(id)
+        .then(res => {
+          newCard.deleteCard()
+          popupTypeDelete.close()
+
+        })
+      })
+    }
+  );
   return newCard.generateCard();
 }
 
 // добавление карточки 
-function addNewCard(data, list) {
+function addNewCard(data) {
   const addCard = createCard (data);
   section.addItem(addCard);
 };
@@ -70,16 +107,18 @@ openButtonPopupPlace.addEventListener('click', () => {
 });
 
 // классы 
-const section = new Section({items: cards, renderer: addNewCard}, '.cards__list');
+
+const section = new Section({renderer: addNewCard}, '.cards__list');
 const popupTypeImage = new PopupWithImage ('.popup_type_image');
 const popupTypeProfile = new PopupWithForm ('.popup_type_profile', submitProfileForm);
 const popupTypePlace = new PopupWithForm ('.popup_type_place', submitPlaceForm);
+const popupTypeDelete = new PopupWithForm ('.popup_type_delete');
+
 
 popupTypeImage.setEventListeners();
 popupTypeProfile.setEventListeners();
 popupTypePlace.setEventListeners();
-
-section.renderItems();
+popupTypeDelete.setEventListeners();
 
 const profileValue = new UserInfo ({
     nameElementSelector: '.profile__name',
