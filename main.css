@@ -34,7 +34,7 @@
 .popup__title{color:#000;font-size:24px;font-weight:900;line-height:29px;margin:0 0 43px}@media screen and (max-width:550px){.popup__title{font-size:18px;line-height:22px;margin-bottom:69px}}
 .button_type_submit{background-image:url(images/SubmitButton.8d94116022c7e63a1836.svg);border-radius:2px;cursor:pointer;height:50px;margin-top:31px;max-width:358px}.button_type_submit:hover{opacity:.8;transition:.4s}@media screen and (max-width:550px){.button_type_submit{background-image:url(images/SubmitButtonMobile.5eb97d282c0984e5753a.svg);height:46px}}
 .button_type_submit-inactive{background-image:url(images/SubmitButtonInactive.bf62d4d3e8b370633a0a.svg);cursor:default}
-.button_type_submit-delete{background-image:url(images/SubmitButtonAgree.d19d645ba83b029c5ea7.svg);margin-top:0}
+.button_type_submit-delete{background-image:url(images/SubmitButtonAgree.d19d645ba83b029c5ea7.svg);margin-top:0;width:358px}
 .button_type_saved{background-image:url(images/ButtonSaved.cc653afa35e136116852.svg)}
 .popup__input{border:none;border-bottom:1px solid rgba(0,0,0,.2);box-shadow:none;font-size:14px;height:27px;line-height:17px;padding-left:0}.popup__input:focus{background-color:hsla(0,8%,73%,.247);border-radius:3px;outline:none}
 .popup__input_type_error{border-bottom:1px solid red}
