@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/AnastasiyaDanilova/mesto#readme",
   "devDependencies": {
+    "@babel/core": "^7.17.8",
     "@babel/preset-env": "^7.16.11",
     "autoprefixer": "^10.4.2",
     "babel-loader": "^8.2.3",

@@ -163,7 +163,6 @@ openButtonPopupAvatar.addEventListener('click', () => {
 // Валидация
 const enableValidation = (config) => {
   const formList = Array.from(document.querySelectorAll(config.formSelector))
-  console.log(formList)
   formList.forEach((formElement) => {
     const validator = new FormValidator(config, formElement)
     const formName = formElement.getAttribute('name')
