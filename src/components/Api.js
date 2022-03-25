@@ -21,7 +21,7 @@ class Api {
             headers: this._headers
         }).then((res) =>
             this._checkServerResponce(res)
-        ).catch(console.log)
+        )
     }
 
     editProfile(name, about) {
@@ -34,7 +34,7 @@ class Api {
             })
         }).then((res) =>
             this._checkServerResponce(res)
-        ).catch(console.log);
+        )
     }
 
     // аватар
@@ -47,7 +47,7 @@ class Api {
             })
         }).then((res) =>
             this._checkServerResponce(res)
-        ).catch(console.log)
+        )
     }
 
     // карточки
@@ -56,7 +56,7 @@ class Api {
             headers: this._headers
         }).then((res) =>
             this._checkServerResponce(res)
-        ).catch(console.log)
+        )
     }
 
     addCard(name, link) {
@@ -69,7 +69,7 @@ class Api {
             })
         }).then((res) =>
             this._checkServerResponce(res)
-        ).catch(console.log)
+        )
     }
 
     // удаление карточки
@@ -79,7 +79,7 @@ class Api {
             headers: this._headers
         }).then((res) =>
             this._checkServerResponce(res)
-        ).catch(console.log)
+        )
     }
 
     // добавлние и удаление лайка
@@ -89,7 +89,7 @@ class Api {
             headers: this._headers
         }).then((res) =>
             this._checkServerResponce(res)
-        ).catch(console.log)
+        )
     }
 
     deleteLike(id) {
@@ -98,7 +98,7 @@ class Api {
             headers: this._headers
         }).then((res) =>
             this._checkServerResponce(res)
-        ).catch(console.log)
+        )
     }
 }
 

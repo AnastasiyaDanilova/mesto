@@ -8,6 +8,7 @@ import { Card } from "../components/Card.js"
 import { config, openButtonPopupAvatar, formValidators, openButtonPopupPprofile, openButtonPopupPlace, nameInputProfile, jobInputProfile, cardTemplateSelector } from "../utils/const.js"
 import { api } from '../components/Api.js'
 import { data } from 'autoprefixer';
+import {PopupWithConfirmation} from '../components/PopupWithConfirmation.js'
 
 let userId
 
@@ -22,23 +23,22 @@ Promise.all([api.getInitialCards(), api.getProfile()])
       const card = createConstCard(data)
       section.addItem(card)
     })
-  })
+  }).catch(console.log)
 
 // отправка форм
 function submitProfileForm(data) {
-  popupTypeProfile.setSaveButton()
-
   api.editProfile(data.name, data.job)
     .then((res) => {
       profileValue.setUserInfo(res.name, res.about)
       popupTypeProfile.close()
-    }).finally(() => {
+    })
+    .catch(console.log)
+    .finally(() => {
       popupTypeProfile.removeSaveButton()
     })
 }
 
 function submitPlaceForm(data) {
-  popupTypePlace.setSaveButton()
 
   api.addCard(data['place-name'], data.link)
     .then((res) => {
@@ -46,19 +46,21 @@ function submitPlaceForm(data) {
       section.addItem(card)
       popupTypePlace.close()
 
-    }).finally(() => {
+    })
+    .catch(console.log)
+    .finally(() => {
       popupTypePlace.removeSaveButton()
     })
 };
 
 function submitAvatarForm(data) {
-  popupTypeAvatar.setSaveButton()
-
   api.changeAvatar(data.link)
     .then((res) => {
       profileValue.setAvatar(res.avatar)
       popupTypeAvatar.close()
-    }).finally(() => {
+    })
+    .catch(console.log)
+    .finally(() => {
       popupTypeAvatar.removeSaveButton()
     })
 };
@@ -89,22 +91,24 @@ function createCard(data) {
       popupTypeDelete.getNewCallback(() => {
         api.deleteCard(id)
           .then(res => {
+            console.log('res', res)
             newCard.deleteCard()
             popupTypeDelete.close()
-          })
+          }).catch(console.log)
       })
+        
     },
     (id) => {
       if (newCard.isLiked()) {
         api.deleteLike(id)
           .then(res => {
             newCard.setLikes(res.likes)
-          })
+          }).catch(console.log)
       } else {
         api.addLike(id)
           .then(res => {
             newCard.setLikes(res.likes)
-          })
+          }).catch(console.log)
       }
     }
   )
@@ -122,7 +126,7 @@ const section = new Section({ renderer: addNewCard }, '.cards__list')
 const popupTypeImage = new PopupWithImage('.popup_type_image')
 const popupTypeProfile = new PopupWithForm('.popup_type_profile', submitProfileForm)
 const popupTypePlace = new PopupWithForm('.popup_type_place', submitPlaceForm)
-const popupTypeDelete = new PopupWithForm('.popup_type_delete')
+const popupTypeDelete = new PopupWithConfirmation('.popup_type_delete')
 const popupTypeAvatar = new PopupWithForm('.popup_type_avatar', submitAvatarForm)
 
 const profileValue = new UserInfo({
@@ -159,6 +163,7 @@ openButtonPopupAvatar.addEventListener('click', () => {
 // Валидация
 const enableValidation = (config) => {
   const formList = Array.from(document.querySelectorAll(config.formSelector))
+  console.log(formList)
   formList.forEach((formElement) => {
     const validator = new FormValidator(config, formElement)
     const formName = formElement.getAttribute('name')

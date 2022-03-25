@@ -13,7 +13,7 @@ export class PopupWithForm extends Popup {
     }
 
     // кнопка 'Сохранение...'
-    setSaveButton() {
+    _setSaveButton() {
         this._submitButton.classList.add('button_type_saved')
     }
 
@@ -30,17 +30,13 @@ export class PopupWithForm extends Popup {
         return this._values
     };
 
-    // создание нового коллбэка для попапа удаления карточки
-    getNewCallback(newsubmitFormCallback) {
-        this._submitFormCallback = newsubmitFormCallback
-    }
     
     // слушатели
     setEventListeners() {
         super.setEventListeners()
         this._popupForm.addEventListener('submit', () => {
             this._submitFormCallback(this._getInputValues())
-            // this._setSaveButton()
+            this._setSaveButton()
         })
     }
 

@@ -52,7 +52,6 @@ export class Card {
   // лайки 
   setLikes(newLikes) {
     this._likes = newLikes
-    this._likeElement = this._cardElement.querySelector('.card__like-count')
 
     this._likeElement.textContent = newLikes.length
 
@@ -68,6 +67,8 @@ export class Card {
 
     this._cardImage = this._cardElement.querySelector('.card__image')
     this._cardCityName = this._cardElement.querySelector('.card__city')
+    this._likeElement = this._cardElement.querySelector('.card__like-count')
+
 
     this._likeCardButton = this._cardElement.querySelector('.card__like-button')
     this._deleteCardButton = this._cardElement.querySelector('.card__delete-button')
@@ -76,7 +77,7 @@ export class Card {
 
     this._setEventListeners()
 
-    // this.setLikes(this._likes)
+    this.setLikes(this._likes)
 
     if (this._ownerId !== this._userId) {
       this._deleteCardButton.style.display = 'none'
