@@ -32,3 +32,4 @@ Mesto - это сервис обмена фотографиями. Куда мо
 **Git-Pages**
 
 * [Ссылка на Git-Pages](https://anastasiyadanilova.github.io/mesto/)
+![mesto](https://user-images.githubusercontent.com/93146397/233844530-50697a47-bfdc-4fc6-99d5-ed92f8512e7c.PNG)
